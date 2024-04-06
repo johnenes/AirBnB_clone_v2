@@ -5,7 +5,7 @@ import time
 from fabric.api import local
 from fabric.operations import env, put, run
 
-env.hosts = ['44.210.150.159', '35.173.47.15']
+env.hosts = ['3.90.81.88', '100.25.199.115']
 
 
 def do_pack():
@@ -14,8 +14,7 @@ def do_pack():
         local("mkdir -p versions")
         local("tar -cvzf versions/web_static_{}.tgz web_static/".
               format(time.strftime("%Y%m%d%H%M%S")))
-        return ("versions/web_static_{}.tgz".format(time.
-                                                    strftime("%Y%m%d%H%M%S")))
+        return ("versions/web_static_{}.tgz".format(time.strftime("%Y%m%d%H%M%S")))
     except:
         return None
 
